@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap");
+
+:root {
+    --fs-default: 1em; //16px
+    --fs-large: 1.125em; //18px
+    --fs-xlarge: 1.25em; //20px
+    --fs-title: 1.5em; //24px
+
+    --clr-theme: #04619f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    padding: 5%;
+    display: flex;
+
+    //body::before
+    &::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: url(/assets/images/map.jpg) center no-repeat;
+        background-size: cover;
+        filter: blur(2px);
+    }
+}
+.container {
+    margin: auto;
+    width: 100%;
+
+    background-color: rgba($color: #ffffff, $alpha: 0.1);
+    backdrop-filter: blur(8px);
+    padding: 2em;
+    box-shadow: 0 5px 10px rgba(#000000, 0.2);
+
+    font-size: var(--fs-default);
+}
+
+.title {
+    font-size: var(--fs-title);
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-bottom: 1.25em;
+
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: -0.1em;
+        left: 0;
+
+        height: 3px;
+        width: 2.5em;
+
+        background: linear-gradient(45deg, var(--clr-theme), #ffffff);
+        border-radius: 5px;
+    }
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.col {
+    width: 100%;
+    margin-bottom: 1.5em;
+}
+
+label {
+    font-size: var(--fs-default);
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.25em;
+    user-select: none;
+}
+
+input {
+    width: 100%;
+    height: 2.75em;
+    border: none;
+    outline: none;
+    border-radius: 0.3em;
+    font-size: var(--fs-default);
+    padding-left: 1em;
+    transition: all 0.3s ease;
+    &:focus {
+        box-shadow: 0 0 0.3em 0.3em #e0e0e0;
+    }
+    &::placeholder {
+        color: rgba(#000000, 0.3);
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        appearance: none;
+    }
+
+    &[type="radio"],
+    &[type="checkbox"] {
+        display: none;
+    }
+}
+
+.form-title {
+    font-size: var(--fs-xlarge);
+    font-weight: 500;
+}
+
+.selection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 1em;
+    padding: 1em 0;
+
+    //.selection label
+    label {
+        font-size: var(--fs-default);
+        margin-right: 2em;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: "";
+            height: 0.5em;
+            width: 0.5em;
+            margin-right: 10px;
+            background: #ffffff;
+            border: 0.2em solid #ffffff;
+        }
+    }
+    &--radio label::before {
+        border-radius: 50%;
+    }
+}
+
+input[type="radio"]:checked ~ label::before,
+input[type="checkbox"]:checked ~ label::before {
+    background: var(--clr-theme);
+}
+
+button {
+    width: 100%;
+    background: #000000;
+    background-image: linear-gradient(145deg, #000000 0%, var(--clr-theme) 70%);
+
+    border-style: none;
+    outline: none;
+    border-radius: 0.5em;
+    color: #ffffff;
+    padding: 0.75em;
+    font-weight: 500;
+
+    cursor: pointer;
+    user-select: none;
+
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 2px 1.5em var(--clr-theme);
+        letter-spacing: 0.1em;
+        transition: all 0.3s ease;
+    }
+}
+
+// 704px
+@media (min-width: 44em) {
+    body {
+        height: 100vh;
+    }
+    .container {
+        max-width: 44em;
+    }
+    .col {
+        width: calc(50% - 1.25em);
+    }
+}
+
+// 1800px
+@media (min-width: 112.5em) {
+    :root {
+        --fs-default: 1.0625em; //17px
+        --fs-large: 1.1875em; //19px
+        --fs-xlarge: 1.3125em; //21px
+        --fs-title: 1.5625em; //25px
+    }
+}
+
+//**********************************************
+
+footer {
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+    p {
+        margin: 5px 0;
+    }
+
+    span {
+        color: red;
+        margin: 0 5px;
+    }
+
+    a {
+        color: greenyellow;
+        text-decoration: none;
+    }
+}

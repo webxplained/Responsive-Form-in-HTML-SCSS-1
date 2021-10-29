@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Form</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Hello friend!</h1>
+
+        <!-- Form -->
+        <form action="#">
+
+            <div class="form-row">
+                <!-- Full name -->
+                <div class="col">
+                    <label for="fullname">Full Name</label>
+                    <input id="fullname" type="text" placeholder="WebXplained" required>
+                </div>
+
+                <!-- user name -->
+                <div class="col">
+                    <label for="username">User Name</label>
+                    <input id="username" type="text" placeholder="Enter your username" required>
+                </div>
+
+                <!-- email -->
+                <div class="col">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" placeholder="Enter your email" required>
+                </div>
+
+                <!-- phone number -->
+                <div class="col">
+                    <label for="phone">Phone Number</label>
+                    <input id="phone" type="number" placeholder="Enter your Phone Number" required>
+                </div>
+
+                <!-- password -->
+                <div class="col">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" placeholder="Enter your password" required>
+                </div>
+
+                <!-- confirm password -->
+                <div class="col">
+                    <label for="password2">Confirm Password</label>
+                    <input id="password2" type="password" placeholder="Confirm password" required>
+                </div>
+            </div>
+
+            <p class="form-title">Gender</p>
+            <div class="selection selection--radio">
+                <div>
+                    <input type="radio" name="gender" id="rad-1">
+                    <label for="rad-1">Male</label>
+                </div>
+                <div>
+                    <input type="radio" name="gender" id="rad-2">
+                    <label for="rad-2">Female</label>
+                </div>
+                <div>
+                    <input type="radio" name="gender" id="rad-3">
+                    <label for="rad-3">Prefer not to say</label>
+                </div>
+            </div>
+
+            <div class="selection">
+                <input type="checkbox" name="accept" id="accept">
+                <label for="accept">Keep me logged in</label>
+            </div>
+
+            <button type="submit">Register</button>
+
+        </form>
+    </div>
+
+
+    <!-- Not needed for the project -->
+    <footer>
+        <p>
+            Created with <span style="color: greenyellow">&#10084;</span> by
+            <a target="_blank" href="https://www.youtube.com/channel/UC4sWzrFzcFKCoGYj6PaIsDg?sub_confirmation=1">
+                Web Xplained
+            </a>
+            - See step by step tutorial video
+            <a target="_blank" href="https://youtu.be/--iULFsl7ko">HERE</a>.
+        </p>
+    </footer>
+    <!-- Not needed for the project -->
+</body>
+
+</html>
